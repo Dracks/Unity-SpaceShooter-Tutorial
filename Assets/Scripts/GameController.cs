@@ -57,7 +57,7 @@ public class GameController : MonoBehaviour {
 
 	void UpdateScore()
 	{
-		scoreText.text = "Score: " + score;
+		scoreText.text = "Score: " + score + "\nLifes: " + numLifes;
 	}
 
 	public void RestartGame(){
@@ -71,7 +71,9 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void LooseLive(){
+		Debug.Log ("LoseLive");
 		numLifes--;
+		UpdateScore ();
 		if (numLifes == 0) {
 			GameOver ();
 		} else {

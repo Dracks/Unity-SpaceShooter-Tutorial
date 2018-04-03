@@ -25,6 +25,7 @@ public class RemoveByContact : MonoBehaviour {
 		Destroy (gameObject);
 		Instantiate (explosion, transform.position, transform.rotation);
 		if (other.tag == "Player") {
+			Debug.Log (this);
 			Instantiate (playerExplosion, other.transform.position, other.transform.rotation);
 			gameController.LooseLive();
 		} else {
